@@ -27,13 +27,3 @@ def writeOutputNormal(in_code):
             f.write(in_code)
 
         subprocess.check_output(["./a.out", "input.c"])
-
-
-    
-
-
-
-# def viewOptimizedCode(request):
-#     in_code = request.POST.get('in_code')
-#     print("Here : ",in_code)
-#     return render(request, 'optimizer/index.html',{'in_code':in_code,'out_code':out_code})
