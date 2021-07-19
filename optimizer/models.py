@@ -50,7 +50,6 @@ class Code:
                         if i > 0:
                             if cur_line_token[0] == prev_line_token[1] and cur_line_token[1] == prev_line_token[0]:
                                 # do nothing
-                                writeFile.write(curLine+'\n')
                                 continue
                             else:
                                 writeFile.write(curLine+'\n')
