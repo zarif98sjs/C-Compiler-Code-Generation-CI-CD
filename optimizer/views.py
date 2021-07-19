@@ -16,14 +16,17 @@ def index(request):
     out_code = data
     # print("Here : ",in_code)
     return render(request, 'optimizer/index.html',{'in_code':in_code,'out_code':out_code})
+    # return render(request, 'optimizer/test.html')
     # return HttpResponse("Hello, world. You're at the optimizer")
 
 
 def writeOutputNormal(in_code):
-    with open("input.c","w") as f:
-        f.write(in_code)
 
-    subprocess.check_output(["./a.out" ,"input.c"])
+    if in_code != None:
+        with open("input.c","w") as f:
+            f.write(in_code)
+
+        subprocess.check_output(["./a.out" ,"input.c"])
 
 
     

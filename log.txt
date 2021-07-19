@@ -2,78 +2,53 @@ Line 1: type_specifier : INT
 
 int
 
-Line 1: declaration_list : ID
-
-i
-
-Line 1: declaration_list : declaration_list COMMA ID
-
-i,j
-
-Line 1: declaration_list : declaration_list COMMA ID
-
-i,j,k
-
-Line 1: declaration_list : declaration_list COMMA ID
-
-i,j,k,l
-
-Line 1: declaration_list : declaration_list COMMA ID
-
-i,j,k,l,m
-
-Line 1: declaration_list : declaration_list COMMA ID
-
-i,j,k,l,m,n
-
-Line 1: declaration_list : declaration_list COMMA ID
-
-i,j,k,l,m,n,o
-
-Line 1: declaration_list : declaration_list COMMA ID
-
-i,j,k,l,m,n,o,p
-
-Line 1: declaration_list : declaration_list COMMA ID
-
-i,j,k,l,m,n,o,p,q
-
-Line 1: var_declaration : type_specifier declaration_list SEMICOLON
-
-int i,j,k,l,m,n,o,p,q;
-
-Line 1: unit : var_declaration
-
-int i,j,k,l,m,n,o,p,q;
-
-Line 1: program : unit
-
-int i,j,k,l,m,n,o,p,q;
-
-Line 2: type_specifier : INT
-
-int
-
-Line 2: declaration_list : ID
-
-x
-
-Line 2: var_declaration : type_specifier declaration_list SEMICOLON
-
-int x;
-
-Line 2: unit : var_declaration
-
-int x;
-
-Line 2: program : program unit
-
-int i,j,k,l,m,n,o,p,q;
-int x;
-
 Line 3: type_specifier : INT
 
 int
+
+Line 3: declaration_list : ID
+
+i
+
+Line 3: declaration_list : declaration_list COMMA ID
+
+i,j
+
+Line 3: declaration_list : declaration_list COMMA ID
+
+i,j,k
+
+Line 3: declaration_list : declaration_list COMMA ID
+
+i,j,k,l
+
+Line 3: declaration_list : declaration_list COMMA ID
+
+i,j,k,l,m
+
+Line 3: declaration_list : declaration_list COMMA ID
+
+i,j,k,l,m,n
+
+Line 3: declaration_list : declaration_list COMMA ID
+
+i,j,k,l,m,n,o
+
+Line 3: declaration_list : declaration_list COMMA ID
+
+i,j,k,l,m,n,o,p
+
+Line 3: var_declaration : type_specifier declaration_list SEMICOLON
+
+int i,j,k,l,m,n,o,p;
+
+Line 3: statement : var_declaration
+
+int i,j,k,l,m,n,o,p;
+
+Line 3: statements : statement
+
+int i,j,k,l,m,n,o,p;
 
 Line 5: variable : ID
 
@@ -115,8 +90,9 @@ Line 5: statement : expression_statement
 
 i=1;
 
-Line 5: statements : statement
+Line 5: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 
 Line 6: statement : PRINTLN LPAREN ID RPAREN SEMICOLON
@@ -125,6 +101,7 @@ printf(i);
 
 Line 6: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 
@@ -186,6 +163,7 @@ j=5+8;
 
 Line 7: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -196,6 +174,7 @@ printf(j);
 
 Line 8: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -279,6 +258,7 @@ k=i+2*j;
 
 Line 9: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -291,6 +271,7 @@ printf(k);
 
 Line 10: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -356,6 +337,7 @@ l=k/3;
 
 Line 11: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -370,6 +352,7 @@ printf(l);
 
 Line 12: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -437,6 +420,7 @@ m=k%9;
 
 Line 13: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -453,6 +437,7 @@ printf(m);
 
 Line 14: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -530,6 +515,7 @@ n=m<=l;
 
 Line 16: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -548,6 +534,7 @@ printf(n);
 
 Line 17: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -627,6 +614,7 @@ o=i!=j;
 
 Line 19: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -647,6 +635,7 @@ printf(o);
 
 Line 20: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -732,6 +721,7 @@ p=n||o;
 
 Line 22: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -754,6 +744,7 @@ printf(p);
 
 Line 23: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -841,6 +832,7 @@ p=n&&o;
 
 Line 25: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -865,6 +857,7 @@ printf(p);
 
 Line 26: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -926,6 +919,7 @@ p++;
 
 Line 28: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -952,6 +946,7 @@ printf(p);
 
 Line 29: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -1023,6 +1018,7 @@ k=-p;
 
 Line 31: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -1051,6 +1047,7 @@ printf(k);
 
 Line 32: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -1108,6 +1105,7 @@ return 0;
 
 Line 37: statements : statements statement
 
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -1135,6 +1133,7 @@ return 0;
 Line 38: compound_statement : LCURL statements RCURL
 
 {
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -1161,10 +1160,6 @@ return 0;
 }
 
 ScopeTable # 1.1
-
-ScopeTable # 1
-0 --> < x , ID > 
-1 --> < main , ID > 
 15 --> < i , ID > 
 16 --> < j , ID > 
 17 --> < k , ID > 
@@ -1173,11 +1168,14 @@ ScopeTable # 1
 20 --> < n , ID > 
 21 --> < o , ID > 
 22 --> < p , ID > 
-23 --> < q , ID > 
+
+ScopeTable # 1
+1 --> < main , ID > 
 
 Line 38: func_definition : type_specifier ID LPAREN RPAREN compound_statement
 
 int main(){
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -1206,6 +1204,7 @@ return 0;
 Line 38: unit : func_definition
 
 int main(){
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -1231,11 +1230,10 @@ printf(k);
 return 0;
 }
 
-Line 38: program : program unit
+Line 38: program : unit
 
-int i,j,k,l,m,n,o,p,q;
-int x;
 int main(){
+int i,j,k,l,m,n,o,p;
 i=1;
 printf(i);
 j=5+8;
@@ -1264,17 +1262,7 @@ return 0;
 Line 40: start : program
 
 ScopeTable # 1
-0 --> < x , ID > 
 1 --> < main , ID > 
-15 --> < i , ID > 
-16 --> < j , ID > 
-17 --> < k , ID > 
-18 --> < l , ID > 
-19 --> < m , ID > 
-20 --> < n , ID > 
-21 --> < o , ID > 
-22 --> < p , ID > 
-23 --> < q , ID > 
 
 Total lines: 40
 Total errors: 0

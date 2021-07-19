@@ -1,6 +1,6 @@
-int i,j,k,l,m,n,o,p,q;
-int x;
 int main(){
+ 
+	int i,j,k,l,m,n,o,p;
  
 	i = 1;
 	println(i);
