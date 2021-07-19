@@ -1,6 +1,7 @@
- int main(){
+int i,j,k,l,m,n,o,p;
+int main(){
  
-	int i,j,k,l,m,n,o,p;
+	
  
 	i = 1;
 	println(i);
