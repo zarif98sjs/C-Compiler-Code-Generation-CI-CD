@@ -7,6 +7,16 @@ FOR_PRINT DW ?
 CR EQU 0DH
 LF EQU 0AH
 NEWLINE DB CR, LF , '$'
+i dw ?
+j dw ?
+k dw ?
+l dw ?
+m dw ?
+n dw ?
+o dw ?
+p dw ?
+q dw ?
+x dw ?
 
 .CODE
 
@@ -93,161 +103,161 @@ MOV AX, @DATA
 MOV DS, AX
 PUSH BP
 MOV BP,SP
-SUB SP,60
+SUB SP,44
 ; i=1;
-MOV WORD PTR [bp-18],1
-MOV CX,[bp-18]
-MOV WORD PTR [bp-2],CX
+MOV WORD PTR [bp-2],1
+MOV CX,[bp-2]
+MOV i,CX
 ; printf(i);
-MOV AX,[bp-2]
+MOV AX,i
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; j=5+8;
-MOV WORD PTR [bp-20],5
-MOV AX,[bp-20]
-MOV WORD PTR [bp-24],AX
-MOV WORD PTR [bp-22],8
-MOV AX,[bp-24]
-ADD AX,[bp-22]
-MOV WORD PTR [bp-26],AX
-MOV CX,[bp-26]
-MOV WORD PTR [bp-4],CX
-; printf(j);
+MOV WORD PTR [bp-4],5
 MOV AX,[bp-4]
+MOV WORD PTR [bp-8],AX
+MOV WORD PTR [bp-6],8
+MOV AX,[bp-8]
+ADD AX,[bp-6]
+MOV WORD PTR [bp-10],AX
+MOV CX,[bp-10]
+MOV j,CX
+; printf(j);
+MOV AX,j
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; k=i+2*j;
-MOV AX,[bp-2]
-MOV WORD PTR [bp-34],AX
-MOV WORD PTR [bp-28],2
-MOV CX,[bp-28]
-MOV WORD PTR [bp-30],CX
+MOV AX,i
+MOV WORD PTR [bp-18],AX
+MOV WORD PTR [bp-12],2
+MOV CX,[bp-12]
+MOV WORD PTR [bp-14],CX
 MOV AX,CX
-IMUL WORD PTR [bp-4]
-MOV WORD PTR [bp-32],AX
-MOV AX,[bp-34]
-ADD AX,[bp-32]
-MOV WORD PTR [bp-36],AX
-MOV CX,[bp-36]
-MOV WORD PTR [bp-6],CX
+IMUL j
+MOV WORD PTR [bp-16],AX
+MOV AX,[bp-18]
+ADD AX,[bp-16]
+MOV WORD PTR [bp-20],AX
+MOV CX,[bp-20]
+MOV k,CX
 ; printf(k);
-MOV AX,[bp-6]
+MOV AX,k
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; l=k/3;
-MOV CX,[bp-6]
+MOV CX,k
 CWD
-MOV WORD PTR [bp-40],CX
-MOV WORD PTR [bp-38],3
-MOV CX,[bp-40]
+MOV WORD PTR [bp-24],CX
+MOV WORD PTR [bp-22],3
+MOV CX,[bp-24]
 MOV AX,CX
-IDIV WORD PTR [bp-38]
-MOV WORD PTR [bp-42],AX
-MOV CX,[bp-42]
-MOV WORD PTR [bp-8],CX
+IDIV WORD PTR [bp-22]
+MOV WORD PTR [bp-26],AX
+MOV CX,[bp-26]
+MOV l,CX
 ; printf(l);
-MOV AX,[bp-8]
+MOV AX,l
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; m=k%9;
-MOV CX,[bp-6]
+MOV CX,k
 CWD
-MOV WORD PTR [bp-46],CX
-MOV WORD PTR [bp-44],9
-MOV CX,[bp-46]
+MOV WORD PTR [bp-30],CX
+MOV WORD PTR [bp-28],9
+MOV CX,[bp-30]
 MOV AX,CX
-IDIV WORD PTR [bp-44]
-MOV WORD PTR [bp-48],DX
-MOV CX,[bp-48]
-MOV WORD PTR [bp-10],CX
+IDIV WORD PTR [bp-28]
+MOV WORD PTR [bp-32],DX
+MOV CX,[bp-32]
+MOV m,CX
 ; printf(m);
-MOV AX,[bp-10]
+MOV AX,m
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; n=m<=l;
-MOV AX,[bp-10]
-CMP AX,[bp-8]
+MOV AX,m
+CMP AX,l
 jle L0
-MOV WORD PTR [bp-50],0
+MOV WORD PTR [bp-34],0
 JMP L1
 L0:
-MOV WORD PTR [bp-50],1
+MOV WORD PTR [bp-34],1
 L1:
-MOV CX,[bp-50]
-MOV WORD PTR [bp-12],CX
+MOV CX,[bp-34]
+MOV n,CX
 ; printf(n);
-MOV AX,[bp-12]
+MOV AX,n
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; o=i!=j;
-MOV AX,[bp-2]
-CMP AX,[bp-4]
+MOV AX,i
+CMP AX,j
 jne L2
-MOV WORD PTR [bp-52],0
+MOV WORD PTR [bp-36],0
 JMP L3
 L2:
-MOV WORD PTR [bp-52],1
+MOV WORD PTR [bp-36],1
 L3:
-MOV CX,[bp-52]
-MOV WORD PTR [bp-14],CX
+MOV CX,[bp-36]
+MOV o,CX
 ; printf(o);
-MOV AX,[bp-14]
+MOV AX,o
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; p=n||o;
-CMP [bp-12],0
+CMP n,0
 JNE L4
-CMP [bp-14],0
+CMP o,0
 JNE L4
-MOV WORD PTR [bp-54],0
+MOV WORD PTR [bp-38],0
 JMP L5
 L4:
-MOV WORD PTR [bp-54],1
+MOV WORD PTR [bp-38],1
 L5:
-MOV CX,[bp-54]
-MOV WORD PTR [bp-16],CX
+MOV CX,[bp-38]
+MOV p,CX
 ; printf(p);
-MOV AX,[bp-16]
+MOV AX,p
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; p=n&&o;
-CMP [bp-12],0
+CMP n,0
 JE L6
-CMP [bp-14],0
+CMP o,0
 JE L6
-MOV WORD PTR [bp-56],1
+MOV WORD PTR [bp-40],1
 JMP L7
 L6:
-MOV WORD PTR [bp-56],0
+MOV WORD PTR [bp-40],0
 L7:
-MOV CX,[bp-56]
-MOV WORD PTR [bp-16],CX
+MOV CX,[bp-40]
+MOV p,CX
 ; printf(p);
-MOV AX,[bp-16]
+MOV AX,p
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; p++;
-MOV AX,[bp-16]
-MOV WORD PTR [bp-58],AX
-INC WORD PTR [bp-16]
+MOV AX,p
+MOV WORD PTR [bp-42],AX
+INC p
 ; printf(p);
-MOV AX,[bp-16]
+MOV AX,p
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; k=-p;
-NEG WORD PTR [bp-16]
-MOV CX,[bp-16]
-MOV WORD PTR [bp-6],CX
+NEG WORD PTR [bp-]
+MOV CX,-p
+MOV k,CX
 ; printf(k);
-MOV AX,[bp-6]
+MOV AX,k
 MOV FOR_PRINT,AX
 CALL OUTPUT
 ; return 0;
-MOV WORD PTR [bp-60],0
-MOV AX,[bp-60]
+MOV WORD PTR [bp-44],0
+MOV AX,[bp-44]
 JMP L_main
 L_main:
-ADD SP,60
+ADD SP,44
 POP BP
 ;DOS EXIT
 MOV AH,4ch
