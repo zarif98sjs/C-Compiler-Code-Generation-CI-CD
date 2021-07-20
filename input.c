@@ -1,4 +1,4 @@
-int i,j,k,l,m,n,o,p;
+ int i,j,k,l,m,n,o,p;
 int main(){
  
 	
