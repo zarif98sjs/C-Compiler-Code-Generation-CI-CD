@@ -3,13 +3,14 @@ import subprocess
 
 class Code:
 
-    def __init__(self, in_code, opt_code):
+    def __init__(self, in_code, code_asm, opt_code_asm):
         self.in_code = in_code
-        self.opt_code = opt_code
+        self.code_asm = code_asm
+        self.opt_code_asm = opt_code_asm
 
     def writeOutputNormal(self):
         if self.in_code is not None:
-            with open("input.c", "w") as f:
+            with open("./tmp/input.c", "w") as f:
                 f.write(self.in_code)
             # subprocess.check_output(["./tmp/./a.out", "input.c"])
             subprocess.run(['chmod', '+x', 'script.sh'])
