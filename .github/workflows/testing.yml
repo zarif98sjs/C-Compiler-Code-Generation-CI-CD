@@ -40,3 +40,15 @@ jobs:
     - name: Django Testing
       run: |
         python3 manage.py test
+
+  deploy:
+      runs-on: ubuntu-latest
+      name: Git Deploy job- A job to deploy django app to heroku using git
+      steps:
+        - name: Deploy django to heroku
+          uses: zarif98sjs/C-Compiler-Code-Generation-CI-CD
+          with:
+            heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+            heroku_email_address: 'midnight.scream98@gmail.com'
+            use_git: true
