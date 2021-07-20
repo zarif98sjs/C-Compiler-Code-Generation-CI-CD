@@ -1,6 +1,5 @@
-int x;
-int abc; 
-void foo()
+int z; 
+void foo2()
 {
-    int x;
+   int x;
 }
