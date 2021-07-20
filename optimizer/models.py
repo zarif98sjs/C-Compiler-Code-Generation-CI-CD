@@ -13,6 +13,7 @@ class Code:
                 f.write(self.in_code)
             # subprocess.check_output(["./a.out", "input.c"])
             subprocess.run(['chmod', '+x', 'script.sh'])
+            subprocess.call(['sh', './script.sh'])
 
     def optimizeCodeFromFile(self, fileName):
         with open(fileName, 'r') as readFile:
