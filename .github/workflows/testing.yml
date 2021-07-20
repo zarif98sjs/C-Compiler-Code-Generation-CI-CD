@@ -43,11 +43,11 @@ jobs:
 
   deploy:
       runs-on: ubuntu-latest
-      
+
       steps:
         - uses: actions/checkout@v2
-        - name: Deploy django to heroku
-          uses: zarif98sjs/C-Compiler-Code-Generation-CI-CD@main
+#        - name: Deploy django to heroku
+#          uses: zarif98sjs/C-Compiler-Code-Generation-CI-CD@main
           with:
             heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
