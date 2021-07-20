@@ -1,4 +1,5 @@
 .MODEL SMALL
+
 .STACK 100H
 .DATA
 IS_NEG DB ?
@@ -6,6 +7,9 @@ FOR_PRINT DW ?
 CR EQU 0DH
 LF EQU 0AH
 NEWLINE DB CR, LF , '$'
+x dw ?
+y dw ?
+
 .CODE
 
 OUTPUT PROC
@@ -23,6 +27,7 @@ OUTPUT PROC
         SUB AX , FOR_PRINT
         ADD AX , 1H
         MOV FOR_PRINT , AX
+
     OUTPUT_LOOP:
     
         ;MOV AH, 1
@@ -43,6 +48,7 @@ OUTPUT PROC
         ;LEA DX, NEWLINE ; DX : USED IN IO and MUL,DIV
         ;MOV AH, 9 ; AH,9 used for character string output
         ;INT 21H;
+
         MOV AL , IS_NEG
         CMP AL , 1H
         JNE OP_STACK_PRINT
@@ -69,9 +75,11 @@ OUTPUT PROC
         INT 21H
         
         JMP OP_STACK_PRINT
+
     EXIT_OUTPUT:
     
         ;POP CX 
+
         LEA DX, NEWLINE
         MOV AH, 9 
         INT 21H
@@ -79,6 +87,8 @@ OUTPUT PROC
         RET     
       
 OUTPUT ENDP
+
+
 
 foo PROC
 PUSH BP

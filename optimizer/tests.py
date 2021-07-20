@@ -9,7 +9,7 @@ class ModelTesting(TestCase):
         line_v = ["MOV WORD PTR [bp-20],AX", "MOV AX,[bp-20]"]
         self.code.optimizeCode(line_v)
 
-        with open('opt_new.asm', 'r') as file:
+        with open('./tmp/opt_new.asm', 'r') as file:
             data = file.read().replace('\n', '\n')
         self.code.opt_code = data
 

@@ -1,0 +1,1 @@
+MOV WORD PTR [bp-20],AX

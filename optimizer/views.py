@@ -11,9 +11,9 @@ def index(request):
     code = Code("", "")
     code.in_code = request.POST.get('in_code')
     code.writeOutputNormal()
-    code.optimizeCodeFromFile('code.asm')
+    code.optimizeCodeFromFile('./tmp/code.asm')
 
-    with open('opt_new.asm', 'r') as file:
+    with open('./tmp/opt_new.asm', 'r') as file:
         data = file.read().replace('\n', '\n')
     code.opt_code = data
     # print("Here : ",in_code)
