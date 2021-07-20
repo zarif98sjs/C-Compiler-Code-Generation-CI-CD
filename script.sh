@@ -1,1 +1,1 @@
-./a.out input.c tmp/code.asm tmp/optimized_code.asm
+./a.out ./tmp/input.c tmp/code.asm tmp/optimized_code.asm

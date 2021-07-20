@@ -7,7 +7,8 @@ FOR_PRINT DW ?
 CR EQU 0DH
 LF EQU 0AH
 NEWLINE DB CR, LF , '$'
-z dw ?
+x dw ?
+abc dw ?
 
 .CODE
 
@@ -90,11 +91,10 @@ OUTPUT ENDP
 foo PROC
 PUSH BP
 MOV BP,SP
-SUB SP,4
-
+SUB SP,2
 
 L_foo:
-ADD SP,4
+ADD SP,2
 POP BP
 RET
 foo ENDP
