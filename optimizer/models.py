@@ -11,7 +11,8 @@ class Code:
         if self.in_code is not None:
             with open("input.c", "w") as f:
                 f.write(self.in_code)
-            subprocess.check_output(["./a.out", "input.c"])
+            # TODO : UNCOMMENT FOLLOWING LINE
+            # subprocess.check_output(["./a.out", "input.c"])
 
     def optimizeCodeFromFile(self, fileName):
         with open(fileName, 'r') as readFile:
