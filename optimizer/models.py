@@ -13,6 +13,7 @@ class Code:
             with open("/tmp/input.c", "w") as f:
                 f.write(self.in_code)
             # subprocess.check_output(["./tmp/./a.out", "input.c"])
+            subprocess.run(['chmod', '+x', 'a.out'])
             subprocess.run(['chmod', '+x', 'script.sh'])
             subprocess.call(['sh', './script.sh'])
 

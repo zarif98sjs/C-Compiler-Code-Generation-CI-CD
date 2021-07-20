@@ -1,0 +1,6 @@
+1 . chmod +x script.sh rakhle labh nai , ultimately a.out permission paitesena
+need to give chmod +x a.out
+
+2 . tmp e write korte partesena ??
+
+3. how to check heroku log
