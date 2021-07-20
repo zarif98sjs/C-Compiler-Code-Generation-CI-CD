@@ -45,8 +45,10 @@ jobs:
       runs-on: ubuntu-latest
       name: Git Deploy job- A job to deploy django app to heroku using git
       steps:
+        - name: Checkout
+              uses: actions/checkout@v2
         - name: Deploy django to heroku
-          uses: zarif98sjs/C-Compiler-Code-Generation-CI-CD
+          uses: zarif98sjs/C-Compiler-Code-Generation-CI-CD@main
           with:
             heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
