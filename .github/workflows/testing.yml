@@ -42,14 +42,11 @@ jobs:
         python3 manage.py test
 
   deploy:
-      runs-on: ubuntu-latest
-
-      steps:
-        - uses: actions/checkout@v2
-#        - name: Deploy django to heroku
-#          uses: zarif98sjs/C-Compiler-Code-Generation-CI-CD@main
-          with:
-            heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-            heroku_email_address: 'midnight.scream98@gmail.com'
-            use_git: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action, this repo lets us deploy to heroku
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "compiler-ci-cd"
+          heroku_email: "midnight.scream98@gmail.com"
