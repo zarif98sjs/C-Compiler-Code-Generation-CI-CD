@@ -43,7 +43,7 @@ jobs:
 
   deploy:
       runs-on: ubuntu-latest
-      name: Git Deploy job- A job to deploy django app to heroku using git
+      
       steps:
         - uses: actions/checkout@v2
         - name: Deploy django to heroku
