@@ -21,14 +21,19 @@ def createFile(fileString, fileName):
 def index(request):
     code = Code("", "", "")
     code.in_code = request.POST.get('in_code')
-    # createFile(str.encode(code.in_code), 'in.txt')
-    code.writeOutputNormal()
-    code.optimizeCodeFromFile('/tmp/code.asm')
 
-    with open('/tmp/opt_new.asm', 'r') as file:
-        data = file.read().replace('\n', '\n')
-    code.opt_code = data
-    # print("Here : ",in_code)
-    return render(request, 'optimizer/index.html', {'in_code': code.in_code, 'out_code': code.opt_code})
+    if code.in_code is not None:
+        # createFile(str.encode(code.in_code), 'in.txt')
+        code.writeOutputNormal()
+        code.optimizeCodeFromFile('/tmp/code.asm')
+
+        with open('/tmp/opt_new.asm', 'r') as file:
+            data = file.read().replace('\n', '\n')
+        code.opt_code_asm = data
+        # print("Here : ",in_code)
+        print("inside")
+    else:
+        code.in_code = ""
+    return render(request, 'optimizer/index.html', {'in_code': code.in_code, 'out_code': code.opt_code_asm})
     # return render(request, 'optimizer/test.html')
     # return HttpResponse("Hello, world. You're at the optimizer")
