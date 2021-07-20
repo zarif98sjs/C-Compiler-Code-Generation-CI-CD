@@ -21,7 +21,7 @@ def createFile(fileString, fileName):
 def index(request):
     code = Code("", "", "")
     code.in_code = request.POST.get('in_code')
-    createFile(str.encode(code.in_code), 'in.txt')
+    # createFile(str.encode(code.in_code), 'in.txt')
     code.writeOutputNormal()
     code.optimizeCodeFromFile('./tmp/code.asm')
 
