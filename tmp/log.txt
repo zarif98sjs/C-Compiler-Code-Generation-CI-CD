@@ -18,31 +18,52 @@ Line 1: program : unit
 
 int z;
 
-Line 2: type_specifier : VOID
-
-void
-
-Line 4: type_specifier : INT
+Line 2: type_specifier : INT
 
 int
 
-Line 4: declaration_list : ID
+Line 2: declaration_list : ID
+
+abc
+
+Line 2: var_declaration : type_specifier declaration_list SEMICOLON
+
+int abc;
+
+Line 2: unit : var_declaration
+
+int abc;
+
+Line 2: program : program unit
+
+int z;
+int abc;
+
+Line 3: type_specifier : VOID
+
+void
+
+Line 5: type_specifier : INT
+
+int
+
+Line 5: declaration_list : ID
 
 x
 
-Line 4: var_declaration : type_specifier declaration_list SEMICOLON
+Line 5: var_declaration : type_specifier declaration_list SEMICOLON
 
 int x;
 
-Line 4: statement : var_declaration
+Line 5: statement : var_declaration
 
 int x;
 
-Line 4: statements : statement
+Line 5: statements : statement
 
 int x;
 
-Line 5: compound_statement : LCURL statements RCURL
+Line 6: compound_statement : LCURL statements RCURL
 
 {
 int x;
@@ -54,31 +75,34 @@ ScopeTable # 1.1
 ScopeTable # 1
 2 --> < z , ID > 
 14 --> < foo2 , ID > 
+24 --> < abc , ID > 
 
-Line 5: func_definition : type_specifier ID LPAREN RPAREN compound_statement
-
-void foo2(){
-int x;
-}
-
-Line 5: unit : func_definition
+Line 6: func_definition : type_specifier ID LPAREN RPAREN compound_statement
 
 void foo2(){
 int x;
 }
 
-Line 5: program : program unit
+Line 6: unit : func_definition
+
+void foo2(){
+int x;
+}
+
+Line 6: program : program unit
 
 int z;
+int abc;
 void foo2(){
 int x;
 }
 
-Line 6: start : program
+Line 7: start : program
 
 ScopeTable # 1
 2 --> < z , ID > 
 14 --> < foo2 , ID > 
+24 --> < abc , ID > 
 
-Total lines: 6
+Total lines: 7
 Total errors: 0

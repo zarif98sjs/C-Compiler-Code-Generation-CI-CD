@@ -7,6 +7,7 @@ CR EQU 0DH
 LF EQU 0AH
 NEWLINE DB CR, LF , '$'
 z dw ?
+abc dw ?
 .CODE
 
 OUTPUT PROC

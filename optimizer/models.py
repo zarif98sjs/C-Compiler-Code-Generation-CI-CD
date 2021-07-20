@@ -10,7 +10,7 @@ class Code:
 
     def writeOutputNormal(self):
         if self.in_code is not None:
-            with open("./tmp/input.c", "w") as f:
+            with open("/tmp/input.c", "w") as f:
                 f.write(self.in_code)
             # subprocess.check_output(["./tmp/./a.out", "input.c"])
             subprocess.run(['chmod', '+x', 'script.sh'])
@@ -22,7 +22,7 @@ class Code:
             self.optimizeCode(line_v)
 
     def optimizeCode(self, line_v):
-        with open('./tmp/opt_new.asm', 'w') as writeFile:
+        with open('/tmp/opt_new.asm', 'w') as writeFile:
             # line_v = readFile.readlines()
             prev_line_token = []
             prevLineCmd = ""
