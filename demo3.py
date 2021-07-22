@@ -1,6 +1,7 @@
 from github import Github
 
-github = Github('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')
+GITHUB_TOKEN = ""
+github = Github(GITHUB_TOKEN)
 repository = github.get_user().get_repo('C-Compiler-Code-Generation-CI-CD')
 
 content = '{\"name\":\"beppe\",\"city\":\"amsterdam\"}'
