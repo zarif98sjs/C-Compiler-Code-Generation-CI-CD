@@ -32,14 +32,14 @@ jobs:
       run: |
         pip install flake8
         flake8
+    - name: Django Testing
+      run: |
+        python3 manage.py test
     - name: Coverage report
       run: |
         pip install coverage
         coverage run manage.py test
         coverage report
-    - name: Django Testing
-      run: |
-        python3 manage.py test
 
   deploy:
     runs-on: ubuntu-latest
