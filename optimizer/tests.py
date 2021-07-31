@@ -14,4 +14,4 @@ class ModelTesting(TestCase):
         self.code.opt_code_asm = data
 
     def test_post_model(self):
-        self.assertEqual(self.code.opt_code_asm, "MOV WORD PTR [bp-20],AX\n")
+        self.assertEqual(self.code.opt_code_asm, "MOV WORD PTR [sp-20],AX\n")
